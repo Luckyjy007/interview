@@ -103,7 +103,7 @@ public class Sort {
         int[] a = {32, 31, 54, 12, 53, 76, 1, -12};
 
 
-        int[] ints = insertSort(a);
+
 
 
 
