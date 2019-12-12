@@ -105,9 +105,6 @@ public class Sort {
 
         int[] ints = insertSort(a);
 
-        for (int i : ints) {
-
-        }
 
 
     }
