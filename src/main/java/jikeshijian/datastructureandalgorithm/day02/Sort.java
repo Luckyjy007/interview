@@ -1,7 +1,5 @@
-package jikeshijian.DataStructureAndAlgorithm.day02;
+package jikeshijian.datastructureandalgorithm.day02;
 
-
-import java.io.IOException;
 
 /**
  * @program: interview

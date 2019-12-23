@@ -1,4 +1,4 @@
-package jikeshijian.DataStructureAndAlgorithm.day01;
+package jikeshijian.datastructureandalgorithm.day01;
 
 /**
  * @program: interview
