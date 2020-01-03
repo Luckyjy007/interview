@@ -23,6 +23,8 @@ public class FutureData  implements Data{
 
     }
 
+
+
     // 实际调用返回RealDate的数据
     @Override
     public synchronized String getResult() {
@@ -38,5 +40,13 @@ public class FutureData  implements Data{
         System.out.println("FutureData.getResult()");
         return realData.result;
 
+    }
+
+    @Override
+    public String toString() {
+        return "FutureData{" +
+                "realData=" + realData +
+                ", isReady=" + isReady +
+                '}';
     }
 }

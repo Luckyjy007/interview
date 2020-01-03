@@ -32,11 +32,11 @@
             <type>pom</type>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-core -->
+        <!-- https://mvnrepository.com/artifact/com.lmax/disruptor -->
         <dependency>
-            <groupId>io.dropwizard.metrics</groupId>
-            <artifactId>metrics-core</artifactId>
-            <version>4.1.2</version>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.4.2</version>
         </dependency>
 
 
