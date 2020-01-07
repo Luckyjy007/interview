@@ -35,7 +35,7 @@ public class Point {
         if (!stampedLock.validate(l)) {
 
             // 升级为悲观读锁
-            long readLock = stampedLock.readLock();
+            l = stampedLock.readLock();
 
             try {
 
@@ -44,7 +44,7 @@ public class Point {
 
             } finally {
 
-                stampedLock.unlock(readLock);
+                stampedLock.unlock(l);
             }
         }
 
