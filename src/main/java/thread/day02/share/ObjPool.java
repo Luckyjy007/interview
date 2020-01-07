@@ -44,6 +44,14 @@ public class ObjPool<T, R> {
         ObjPool<Integer, String> pool = new ObjPool<Integer, String>(10, 2);
 // 通过对象池获取 t，之后执行
 
+//        pool.exec(new Function<Integer, String>() {
+//            @Override
+//            public String apply(Integer integer) {
+//
+//                return null;
+//            }
+//        });
+
         pool.exec(t -> {
             System.out.println(t);
             return t.toString();

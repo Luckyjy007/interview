@@ -13,22 +13,17 @@ public class MySemaphore {
     static final Semaphore s = new Semaphore(1);
     static int count;
 
-    void  addOne() throws InterruptedException {
+    void addOne() throws InterruptedException {
 
-        System.out.println(Thread.currentThread().getName()+" enter addOne");
+        System.out.println(Thread.currentThread().getName() + " enter addOne");
         s.acquire();
-        System.out.println(Thread.currentThread().getName()+" do s.acquire() "+s);
-
+        System.out.println(Thread.currentThread().getName() + " do s.acquire() " + s);
         try {
             count++;
-
-            System.out.println(Thread.currentThread().getName()+"  count++; "+count);
-
-        }finally {
-
+            System.out.println(Thread.currentThread().getName() + "  count++; " + count);
+        } finally {
             s.release();
-
-            System.out.println(Thread.currentThread().getName()+"   s.release(); "+s);
+            System.out.println(Thread.currentThread().getName() + "   s.release(); " + s);
 
         }
 
@@ -43,7 +38,6 @@ public class MySemaphore {
                 try {
                     semaphore.addOne();
                 } catch (InterruptedException e) {
-
 
 
                     e.printStackTrace();
