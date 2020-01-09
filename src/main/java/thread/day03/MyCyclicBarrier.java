@@ -1,6 +1,5 @@
 package thread.day03;
 
-import sun.jvm.hotspot.memory.Generation;
 
 import java.util.Vector;
 import java.util.concurrent.CyclicBarrier;

@@ -13,6 +13,7 @@ public class CyclicBarrierDemo {
     static class TaskThread extends Thread {
 
         CyclicBarrier barrier;
+        private volatile int count;
 
         public TaskThread(CyclicBarrier barrier) {
             this.barrier = barrier;
@@ -23,18 +24,12 @@ public class CyclicBarrierDemo {
         @Override
         public void run() {
            try {
-           Thread.sleep((int) (Math.random() * 1000));
-                System.out.println(getName() + " 到达栅栏 A");
                 barrier.await();
-               barrier.await();
-               barrier.await();
-               barrier.await();
-               barrier.await();
-              //  System.out.println(getName() + " 冲破栅栏 A");
-               //Thread.sleep((int) (Math.random() * 1000));
-               // System.out.println(getName() + " 到达栅栏 B");
-              //  barrier.await();
-              //  System.out.println(getName() + " 冲破栅栏 B");
+               System.out.println(getName() + " 冲破栅栏 A"+(++count));
+
+             //等待所有线程冲破栅栏A然后一起往下走
+                barrier.await();
+                System.out.println(getName() +" 冲破栅栏 B"+(++count));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -51,9 +46,8 @@ public class CyclicBarrierDemo {
             }
         });
 
-        for(int i = 0; i < 5; i++) {
+        for(int i = 0; i < threadNum; i++) {
             new TaskThread(barrier).start();
-            Thread.sleep(100);
         }
     }
     }
