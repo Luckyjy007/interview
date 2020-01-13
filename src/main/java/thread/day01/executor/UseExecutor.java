@@ -15,9 +15,7 @@ public class UseExecutor   {
 
         ExecutorService pool = Executors.newFixedThreadPool(10);
 
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
 
-        ExecutorService executorService1 = Executors.newCachedThreadPool();
 
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(10);
 
@@ -27,7 +25,7 @@ public class UseExecutor   {
             public String call() throws Exception {
 
 
-                Thread.sleep(1000000l);
+                Thread.sleep(1000L);
 
                 return UUID.randomUUID().toString();
             }
@@ -38,11 +36,9 @@ public class UseExecutor   {
 
 
 
+        String s = task.get();
 
-
-       // String s = task.get();
-
-       // System.out.println(" other waiting "+s);
+        System.out.println(" other waiting "+s);
 
 
 
@@ -52,7 +48,7 @@ public class UseExecutor   {
             @Override
             public void run() {
 
-                System.out.println("hi ");
+            //    System.out.println("hi ");
 
 
             }

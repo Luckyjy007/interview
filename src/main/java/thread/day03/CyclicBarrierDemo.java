@@ -1,5 +1,6 @@
 package thread.day03;
 
+import java.util.concurrent.Callable;
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -20,24 +21,32 @@ public class CyclicBarrierDemo {
         }
 
 
-
         @Override
         public void run() {
-           try {
+            try {
                 barrier.await();
-               System.out.println(getName() + " 冲破栅栏 A"+(++count));
+                System.out.println(getName() + " 冲破栅栏 A" + (++count));
 
-             //等待所有线程冲破栅栏A然后一起往下走
+                //等待所有线程冲破栅栏A然后一起往下走
                 barrier.await();
-                System.out.println(getName() +" 冲破栅栏 B"+(++count));
+                System.out.println(getName() + " 冲破栅栏 B" + (++count));
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }}
+        }
+    }
 
-
+    //
     public static void main(String[] args) throws InterruptedException {
+
+
+        System.out.println(1 / 0);
+
         int threadNum = 5;
+
+
+
+
         CyclicBarrier barrier = new CyclicBarrier(threadNum, new Runnable() {
 
             @Override
@@ -46,9 +55,9 @@ public class CyclicBarrierDemo {
             }
         });
 
-        for(int i = 0; i < threadNum; i++) {
+        for (int i = 0; i < threadNum; i++) {
             new TaskThread(barrier).start();
         }
     }
-    }
+}
 
