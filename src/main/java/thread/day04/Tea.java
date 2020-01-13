@@ -76,7 +76,6 @@ public class Tea {
         ExecutorService threadPool = Executors.newFixedThreadPool(2);
         threadPool.submit(ft1);
         threadPool.submit(ft2);
-
         threadPool.shutdown();
         System.out.println(ft1.get());
     }
