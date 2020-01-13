@@ -40,12 +40,8 @@ public class CyclicBarrierDemo {
     public static void main(String[] args) throws InterruptedException {
 
 
-        System.out.println(1 / 0);
 
         int threadNum = 5;
-
-
-
 
         CyclicBarrier barrier = new CyclicBarrier(threadNum, new Runnable() {
 
